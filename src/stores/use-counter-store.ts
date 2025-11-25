@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 interface CounterState {
   count: number;
@@ -18,10 +18,8 @@ export const useCounterStore = create<CounterState>()(
         reset: () => set({ count: 0 }),
       }),
       {
-        name: 'counter-storage',
+        name: "counter-storage",
       }
     )
   )
 );
-
-

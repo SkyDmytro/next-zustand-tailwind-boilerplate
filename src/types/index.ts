@@ -13,5 +13,3 @@ export interface ApiResponse<T> {
 }
 
 // Add more global types here
-
-

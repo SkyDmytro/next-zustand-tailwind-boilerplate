@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface User {
   id: string;
@@ -28,5 +28,3 @@ export const useUserStore = create<UserState>()(
     clearUser: () => set({ user: null, error: null }),
   }))
 );
-
-

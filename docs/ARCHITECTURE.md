@@ -273,13 +273,11 @@ import Image from "next/image";
 ## 🔒 Security Best Practices
 
 1. **Environment Variables**
-
    - Never commit `.env` files
    - Use `NEXT_PUBLIC_` prefix for client-side variables
    - Keep sensitive data server-side only
 
 2. **API Routes**
-
    - Validate all inputs
    - Use proper authentication
    - Rate limiting for public endpoints

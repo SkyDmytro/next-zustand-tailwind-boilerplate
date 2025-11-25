@@ -44,7 +44,7 @@ export function UserForm() {
         {user ? (
           <div className="space-y-4">
             <div className="rounded-lg border p-4">
-              <p className="text-sm text-muted-foreground">Current User:</p>
+              <p className="text-muted-foreground text-sm">Current User:</p>
               <p className="font-semibold">{user.name}</p>
               <p className="text-sm">{user.email}</p>
             </div>

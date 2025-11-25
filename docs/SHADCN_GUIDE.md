@@ -23,6 +23,7 @@ npx shadcn@latest add button card input label dialog
 Visit [ui.shadcn.com/docs/components](https://ui.shadcn.com/docs/components) for the full list.
 
 Popular components:
+
 - `button` - Customizable buttons
 - `card` - Container with header, content, footer
 - `dialog` - Modal dialogs
@@ -44,20 +45,17 @@ Components are installed in `components/ui/` and can be modified directly.
 Edit `components/ui/button.tsx`:
 
 ```typescript
-const buttonVariants = cva(
-  "inline-flex items-center justify-center...",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground...",
-        destructive: "bg-destructive text-destructive-foreground...",
-        outline: "border border-input...",
-        // Add your custom variant
-        custom: "bg-purple-500 text-white hover:bg-purple-600",
-      },
+const buttonVariants = cva("inline-flex items-center justify-center...", {
+  variants: {
+    variant: {
+      default: "bg-primary text-primary-foreground...",
+      destructive: "bg-destructive text-destructive-foreground...",
+      outline: "border border-input...",
+      // Add your custom variant
+      custom: "bg-purple-500 text-white hover:bg-purple-600",
     },
-  }
-);
+  },
+});
 ```
 
 Usage:
@@ -78,7 +76,7 @@ Customize colors in `app/globals.css`:
     --primary: 222.2 47.4% 11.2%;
     /* Add more custom colors */
   }
-  
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -192,4 +190,3 @@ All Shadcn/UI components support dark mode out of the box. Colors automatically 
 - [Shadcn/UI Documentation](https://ui.shadcn.com/)
 - [Component Examples](https://ui.shadcn.com/examples)
 - [Customization Guide](https://ui.shadcn.com/docs/components-json)
-

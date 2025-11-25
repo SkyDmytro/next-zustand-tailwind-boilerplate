@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="mb-4 text-5xl font-bold tracking-tight">
             Next.js + Tailwind + Shadcn/UI + Zustand
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-muted-foreground text-xl">
             A modern boilerplate for building full-stack applications
           </p>
         </div>
@@ -19,9 +19,9 @@ export default function Home() {
           <UserForm />
         </div>
 
-        <div className="mt-16 rounded-lg border bg-card p-8 text-card-foreground">
+        <div className="bg-card text-card-foreground mt-16 rounded-lg border p-8">
           <h2 className="mb-4 text-2xl font-semibold">What&apos;s Included?</h2>
-          <ul className="space-y-2 text-muted-foreground">
+          <ul className="text-muted-foreground space-y-2">
             <li className="flex items-start gap-2">
               <span className="text-primary">✓</span>
               <span>

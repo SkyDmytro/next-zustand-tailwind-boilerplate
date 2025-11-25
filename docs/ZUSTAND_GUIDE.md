@@ -5,7 +5,7 @@ This guide covers how to effectively use Zustand in this boilerplate.
 ## Basic Store Creation
 
 ```typescript
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface BearState {
   bears: number;
@@ -30,7 +30,7 @@ import { useBearStore } from '@/stores/use-bear-store';
 export function BearCounter() {
   const bears = useBearStore((state) => state.bears);
   const increasePopulation = useBearStore((state) => state.increasePopulation);
-  
+
   return (
     <div>
       <h1>{bears} bears around here...</h1>
@@ -47,17 +47,17 @@ export function BearCounter() {
 Automatically persists state to localStorage:
 
 ```typescript
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export const useStore = create(
   persist(
     (set) => ({
-      data: 'initial',
+      data: "initial",
       setData: (data: string) => set({ data }),
     }),
     {
-      name: 'storage-key',
+      name: "storage-key",
     }
   )
 );
@@ -68,12 +68,12 @@ export const useStore = create(
 Enables Redux DevTools integration:
 
 ```typescript
-import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
 export const useStore = create(
   devtools((set) => ({
-    data: 'initial',
+    data: "initial",
     setData: (data: string) => set({ data }),
   }))
 );
@@ -82,17 +82,17 @@ export const useStore = create(
 ### Combining Middleware
 
 ```typescript
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 export const useStore = create(
   devtools(
     persist(
       (set) => ({
-        data: 'initial',
+        data: "initial",
         setData: (data: string) => set({ data }),
       }),
-      { name: 'my-storage' }
+      { name: "my-storage" }
     )
   )
 );
@@ -115,7 +115,7 @@ export const useTodoStore = create<TodoState>((set) => ({
   fetchTodos: async () => {
     set({ isLoading: true });
     try {
-      const response = await fetch('/api/todos');
+      const response = await fetch("/api/todos");
       const todos = await response.json();
       set({ todos, isLoading: false });
     } catch (error) {
@@ -168,6 +168,7 @@ export const useAppStore = create<UserSlice & AuthSlice>()((...a) => ({
 ## Server Components vs Client Components
 
 In Next.js App Router:
+
 - Zustand hooks only work in Client Components (use `"use client"`)
 - For server-side data, use Server Components and pass as props
 - Use Zustand for client-side state (UI state, forms, etc.)
@@ -176,4 +177,3 @@ In Next.js App Router:
 
 - [Zustand Documentation](https://zustand-demo.pmnd.rs/)
 - [Zustand GitHub](https://github.com/pmndrs/zustand)
-
